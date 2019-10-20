@@ -131,7 +131,7 @@ class UDPipeTokenizer(object):
             pos.append(self.vocab.strings.add(token.upostag or ""))
             # CoNNL xpostag-s, custom for each UD treebank
             #tags.append(self.vocab.strings.add(token.xpostag or ""))
-            tags.append(self.vocab.strings.add(token.upostag+'__'+token.feats or ""))
+            tags.append(self.vocab.strings.add(token.feats or ""))
             deps.append(self.vocab.strings.add(self._dep(token.deprel) or ""))
             lemmas.append(self.vocab.strings.add(token.lemma or ""))
             offset += len(token.form)
